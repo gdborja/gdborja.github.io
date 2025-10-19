@@ -13,8 +13,11 @@
   }
   *{box-sizing:border-box}
   html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);}
+  /* clave: hacer que el body sea un flex column para poder empujar el footer abajo */
+  body{display:flex;flex-direction:column;}
   a{color:inherit}
-  .container{max-width:1120px;margin:44px auto;padding:28px}
+  /* .site-wrap ocupa todo el espacio flexible disponible entre header y footer */
+  .container{flex:1;max-width:1120px;margin:44px auto;padding:28px;display:flex;flex-direction:column}
   /* HERO */
   .hero{
     display:flex;align-items:center;gap:22px;padding:40px;border-radius:8px;background:linear-gradient(180deg,#ffffff, #fbfbfb);box-shadow:0 10px 30px rgba(12,16,20,0.04);border:1px solid rgba(12,16,20,0.04);
@@ -35,11 +38,13 @@
   .card .body{padding:18px}
   .card h3{margin:0 0 6px;font-size:1.05rem;font-weight:600;font-family:Merriweather,serif}
   .card p{margin:0;color:var(--muted);font-size:0.92rem}
+  /* main debe crecer para empujar el footer hacia abajo */
+  main{flex:1;display:flex;flex-direction:column}
   /* Responsive */
   @media (max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:560px){.hero{flex-direction:column;align-items:flex-start}.grid{grid-template-columns:1fr} .card .thumb{height:140px}}
-  /* Footer small */
-  footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center}
+  /* Footer small (queda al fondo) */
+  footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center;padding:18px 0}
 </style>
 </head>
 <body>
@@ -109,13 +114,10 @@
         </a>
       </section>
     </main>
-
-    <footer>
-      <small>Borja García Dévora• <a href="mailto:borja.contactotf@gmail.com">borja.contactotf@gmail.com</a> • <a href="https://www.infojobs.net/candidate/cv/view/index.xhtml" target="_blank" rel="noopener">InfoJobs</a></small>
-    </footer>
   </div>
+
+  <footer>
+    <small>Borja García Dévora • <a href="mailto:borja.contactotf@gmail.com">borja.contactotf@gmail.com</a> • <a href="https://www.infojobs.net/candidate/cv/view/index.xhtml" target="_blank" rel="noopener">InfoJobs</a></small>
+  </footer>
 </body>
 </html>
-
-
-
