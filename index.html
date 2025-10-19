@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Borja García Dévora</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fafafa; --muted:#6b7280; --text:#0b1220; --accent:#111827;
+    --card-bg:#fff; --gap:28px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);}
+  a{color:inherit}
+  .container{max-width:1120px;margin:44px auto;padding:28px}
+  /* HERO */
+  .hero{
+    display:flex;align-items:center;gap:22px;padding:40px;border-radius:8px;background:linear-gradient(180deg,#ffffff, #fbfbfb);box-shadow:0 10px 30px rgba(12,16,20,0.04);border:1px solid rgba(12,16,20,0.04);
+  }
+  .hero .photo{width:110px;height:110px;border-radius:10px;overflow:hidden;flex:0 0 110px}
+  .hero .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero .headline h1{margin:0;font-family:Merriweather,serif;font-size:28px;font-weight:700}
+  .hero .headline p{margin:8px 0 0;color:var(--muted);font-size:15px;max-width:760px}
+  /* GRID */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:34px}
+  .card{
+    display:block;background:var(--card-bg);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;
+    border:1px solid rgba(12,16,20,0.04);box-shadow:0 6px 18px rgba(12,16,20,0.04);transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(12,16,20,0.08)}
+  .card .thumb{height:170px;display:block;overflow:hidden;background:#efefef}
+  .card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .body{padding:18px}
+  .card h3{margin:0 0 6px;font-size:1.05rem;font-weight:600;font-family:Merriweather,serif}
+  .card p{margin:0;color:var(--muted);font-size:0.92rem}
+  /* Responsive */
+  @media (max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.hero{flex-direction:column;align-items:flex-start}.grid{grid-template-columns:1fr} .card .thumb{height:140px}}
+  /* Footer small */
+  footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero" role="banner">
+      <div class="photo"><img src="/assets/avatar.jpg" alt="Tu Nombre"></div>
+      <div class="headline">
+        <h1>Borja García Dévora</h1>
+        <p>Administrador de Sistemas y Especialista en Ciberseguridad — Máster FP en Ciberseguridad. Practicas destacadas en Forense, Hardening de red (pfSense), Wazuh, ELK y Zabbix. Mira los proyectos haciendo click en cada tarjeta.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" aria-label="Proyectos">
+        <!-- CARD: modificar href y src de la miniatura -->
+        <a class="card" href="/projects/forense/">
+          <div class="thumb"><img src="/assets/thumbs/forense.jpg" alt="Forense"></div>
+          <div class="body">
+            <h3>Análisis Forense</h3>
+            <p>Verificación de E01, extracción de artefactos y redacción de informe (versión saneada).</p>
+          </div>
+        </a>
+
+        <a class="card" href="/projects/pfsense-hardening/">
+          <div class="thumb"><img src="/assets/thumbs/pfsense.jpg" alt="pfSense"></div>
+          <div class="body">
+            <h3>Bastionado — pfSense</h3>
+            <p>Instalación en VM, reglas, NAT, VPN y sensor IDS (Suricata). Laboratorio documentado.</p>
+          </div>
+        </a>
+
+        <a class="card" href="/projects/wazuh-deploy/">
+          <div class="thumb"><img src="/assets/thumbs/wazuh.jpg" alt="Wazuh"></div>
+          <div class="body">
+            <h3>Wazuh — Despliegue</h3>
+            <p>Manager + agentes, integración con Elastic y reglas de detección para SSH y cambios de ficheros.</p>
+          </div>
+        </a>
+
+        <a class="card" href="/projects/elk-kibana/">
+          <div class="thumb"><img src="/assets/thumbs/elk.jpg" alt="ELK"></div>
+          <div class="body">
+            <h3>Kibana / ELK</h3>
+            <p>Pipeline Filebeat → Logstash → Kibana. Dashboards para detección de picos y errores.</p>
+          </div>
+        </a>
+
+        <a class="card" href="/projects/zabbix-monitoring/">
+          <div class="thumb"><img src="/assets/thumbs/zabbix.jpg" alt="Zabbix"></div>
+          <div class="body">
+            <h3>Zabbix — Monitorización</h3>
+            <p>Templates y triggers para CPU, disco y servicio web (alertas y notificaciones).</p>
+          </div>
+        </a>
+
+        <a class="card" href="/projects/otros/">
+          <div class="thumb"><img src="/assets/thumbs/otros.jpg" alt="Otros"></div>
+          <div class="body">
+            <h3>Otros</h3>
+            <p>Scripts PowerShell/Bash, automatización y ejercicios TryHackMe publicados.</p>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <small>Portfolio — Tu Nombre • <a href="mailto:tu@correo.com">tu@correo.com</a> • <a href="https://www.linkedin.com/in/tuusuario" target="_blank" rel="noopener">LinkedIn</a></small>
+    </footer>
+  </div>
+</body>
+</html>
