@@ -24,7 +24,14 @@ El primer paso consiste en comprobar la integridad de la imagen recibida y así 
 <p align="center">
     <img src="img/1.png" alt="comprobar integridad" width="400px">
 </p>
-
+Seleccionamos el formato de imagen resultante.
+<p align="center">
+    <img src="img/2.png" alt="Selección de formato" width="400px">
+</p>
+Nombre de la imagen y ruta de destino.
+<p align="center">
+    <img src="img/3.png" alt="Nombre y ruta de la imagen resultante" width="400px">
+</p>
 
 <h2 id="bloque-2-informe-pericial">3. Bloque 2 – Informe Pericial</h2>
 
