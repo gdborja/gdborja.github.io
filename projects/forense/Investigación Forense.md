@@ -21,8 +21,8 @@ La presente actividad se estructura en dos bloques cuyo objetivo es abordar de f
 <h2 id="bloque-1-analisis-forense-de-un-sistema-informatico">2. Bloque 1 - Análisis forense de un sistema informático</h2>
 
 El primer paso consiste en comprobar la integridad de la imagen recibida y así verificar que se ha respetado la cadena de custodia. Dado que la imagen está dividida en fragmentos de 655080 KB cada uno, crearemos con FTK Imager un único archivo que reúna todos esos ficheros. De este modo, podremos calcular los valores de resumen (hashes) correspondientes y compararlos con los proporcionados. 
-<p aling="center">
-    <img src="img/1.png" alt="comprobar integridad">
+<p align="center">
+    <img src="img/1.png" alt="comprobar integridad" width="640">
 </p>
 
 
