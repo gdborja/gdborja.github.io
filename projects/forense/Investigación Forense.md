@@ -32,6 +32,19 @@ Nombre de la imagen y ruta de destino.
 <p align="center">
     <img src="img/3.png" alt="Nombre y ruta de la imagen resultante" width="400px">
 </p>
+Calculamos los valores hash MD5 y SHA-1 para garantizar la integridad de la imagen recibida. Aunque 
+el nombre del archivo resultante en FTK Imager no coincida exactamente con el de la imagen 
+original, la herramienta fusiona de forma transparente todos los fragmentos en un único volumen 
+RAW idéntico al inicial.
+<p align="center">
+    <img src="img/4.png" alt="Comprobar hash de evidencias" width="400px">
+</p>
+A continuación, mostramos el tamaño de la partición a analizar. En el volumen Ann_HD.E01, 
+hacemos clic derecho sobre el archivo, seleccionamos Propiedades y comprobamos que su tamaño 
+es de 10462593024 Bytes (aproximadamente 10,46 GB)
+<p align="center">
+    <img src="img/5.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
 
 <h2 id="bloque-2-informe-pericial">3. Bloque 2 – Informe Pericial</h2>
 
