@@ -89,6 +89,25 @@ SYSTEM, que presenta las siguientes propiedades.
 <p align="center">
     <img src="img/14.png" alt="Comprobar tamaño de la partición" width="400px">
 </p> 
+Analizamos la clave con Register Explorer y en primer lugar revisamos el directorio SYSTEM\Select 
+para identificar cuál ControlSet fue utilizado por el sistema en su último arranque exitoso apreciando 
+que fue controlSet001, ya que el valor current es 1.
+<p align="center">
+    <img src="img/15.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Navegamos al directorio ControlSet001\Control\Windows y apreciamos el valor ShutdownTime en 
+Hexadecimal que convertido sabemos que la hora del último apagado fue 9 de abril de 2024 a las 
+13:27:57 (hora local Europa/Madrid)
+<p align="center">
+    <img src="img/16.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Para identificar los usuarios definidos en el sistema (excluyendo los creados por defecto) y 
+determinar la fecha y hora de su último inicio de sesión, accedemos a la clave de registro SAM 
+ubicada en el directorio Windows\System32\config, la extraemos y analizamos con Register 
+Explorer. 
+<p align="center">
+    <img src="img/17.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
 <h2 id="bloque-2-informe-pericial">3. Bloque 2 – Informe Pericial</h2>
 
 Resumen del Bloque 2... 
