@@ -45,7 +45,50 @@ es de 10462593024 Bytes (aproximadamente 10,46 GB)
 <p align="center">
     <img src="img/5.png" alt="Comprobar tamaño de la partición" width="400px">
 </p>
-
+Para conocer el sistema y la versión del SO instalado navegamos hasta 
+Windows\System32\config\SOFTWARE y extraemos la clave de Registro SOFTWARE que 
+posteriormente analizaremos con la herramienta Register Explorer.
+<p align="center">
+    <img src="img/6.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Mostramos las propiedades del fichero.
+<p align="center">
+    <img src="img/7.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Analizando la clave de registro Software navegamos al directorio Microsoft\Windows 
+NT\CurrentVersion y nos fijamos en los valores ProductName y CurrentVersion, demostrando que el 
+Sistema operativo es Windows con la versión Windows 7 Professional 
+<p align="center">
+    <img src="img/8.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+En este mismo directorio podemos apreciar el nombre de usuario Ann y ninguna organización 
+registrada. 
+<p align="center">
+    <img src="img/9.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Además el ProductID asociado al sistema.
+<p align="center">
+    <img src="img/10.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Debido a la ausencia de la clave CSDVersion, y a que tanto CurrentBuild como CurrentBuildNumber 
+tienen valor 7600, podemos concluir que el sistema no tiene instalado ningún Service Pack. 
+<p align="center">
+    <img src="img/11.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+El campo InstallDate almacena la fecha y hora de instalación en formato timestamp Unix (segundos 
+desde el 1 de enero de 1970, UTC); convertido a la hora local de Europa/Madrid, corresponde al 2 de 
+septiembre de 2015 a las 12:17:43 CEST. 
+<p align="center">
+    <img src="img/12.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Por otra parte, para determinar la fecha y hora del último apagado, extraemos la clave de registro 
+SYSTEM, que presenta las siguientes propiedades.
+<p align="center">
+    <img src="img/13.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+<p align="center">
+    <img src="img/14.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
 <h2 id="bloque-2-informe-pericial">3. Bloque 2 – Informe Pericial</h2>
 
 Resumen del Bloque 2... 
