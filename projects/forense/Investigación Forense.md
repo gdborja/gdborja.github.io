@@ -108,6 +108,129 @@ Explorer.
 <p align="center">
     <img src="img/17.png" alt="Comprobar tamaño de la partición" width="400px">
 </p> 
+Mostramos las propiedades de este.
+<p align="center">
+    <img src="img/18.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+En el directorio Domains\Account\Users se identifican dos cuentas de usuario personalizadas: Tom y 
+Anna, ambas con permisos de administrador. Analizando los datos de cada cuenta, se determina que: 
+• El último inicio de sesión de Tom fue el 21 de octubre de 2015 a las 09:03:02. 
+• El último inicio de sesión de Anna tuvo lugar el 21 de octubre de 2015 a las 13:54:18
+<p align="center">
+    <img src="img/19.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+A continuación, procedemos a localizar archivos eliminados en el sistema. Para ello, analizamos el 
+contenido del directorio $Recycle.Bin, correspondiente a la Papelera de reciclaje de Windows. 
+Dentro de este directorio identificamos una subcarpeta asociada al SID del usuario Ann 
+$Recycle.Bin\S-1-5-21-2589184436-4231671082-1653910475-1000
+
+<p align="center">
+    <img src="img/20.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+El contenido del fichero corresponde a una lista de posibles datos sensibles organizada en bloques, 
+cada uno compuesto por el tipo de tarjeta "Visa", un número de tarjeta de 16 dígitos que cumple con 
+el formato típico de tarjetas Visa (comenzando por el dígito 4) y un nombre completo de persona. 
+Identifico que el fichero es relevante para la causa investigada. 
+<p align="center">
+    <img src="img/21.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Del mismo modo, localizamos el fichero $IQC0MZN.ods con la ruta al fichero 
+C:\Users\Ann\Desktop\Pendientes.ods en su interior. 
+<p align="center">
+    <img src="img/22.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Si lo extraemos y lo abrimos con LibreOfice podemos apreciar el siguiente contenido en su interior. 
+<p align="center">
+    <img src="img/23.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Además de los ficheros previamente identificados, al examinar la galería de imágenes, 
+específicamente en el directorio Users/Ann/Pictures/Fotos/Otras fotos, se localizó una fotografía 
+denominada Playa.png con el siguiente contenido en su interior. 
+<p align="center">
+    <img src="img/24.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Del mismo modo, analizando los metadatos de la imagen 20150907_162718.jpg incluye coordenadas 
+GPS (latitud 41.611493 y longitud 2.081493) que sitúan la ubicación aproximada en Granollers 
+Barcelona. 
+<p align="center">
+    <img src="img/25.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+En el mismo lugar también se sacaron las fotografías 20150907_162819.jpg y 20150907_162746.jpg 
+todas vinculas al dispositivo móvil SAMSUNG SM-G350 
+<p align="center">
+    <img src="img/26.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+En el directorio Users/Ann/Downloads/se localizaron varios archivos comprimidos. 
+• ListadoNumeraciones.zip
+<p align="center">
+    <img src="img/27.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+El cual estaba comprimido con contraseña. 
+<p align="center">
+    <img src="img/28.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Para determinar si el archivo fue abierto recientemente, encontrar datos útiles en la caché y obtener 
+posibles indicios sobre la contraseña utilizada, examino el directorio de archivos temporales del 
+sistema, ubicado en /Users/Ann/AppData/Roaming/. Encuentro un el directorio dclogs, y dentro el 
+fichero 2015-09-07-2.dc, el cual contiene parte de una conversación de Skype del usuario annetom22 
+y la sentencia "Introducir contraseña: Kapo[<-][<-][<-][<-][<-]KaPoe[<-]w581!KaPow581! " y más 
+abajo:: Documentos (19:41:09) 
+[F2][<-]Listado n[<-][<-][<-][<-][<-][<-][<-][<-][<-]Listado numeracions[<-]es lo que me da a pensar 
+que se trata de la contraseña para descomprimir el fichero.
+<p align="center">
+    <img src="img/29.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Después de varios intentos, determino que la contraseña es KaPow581! y al descomprimir el .zip 
+encontramos el ejecutable LlistatNumeracions.exe 
+<p align="center">
+    <img src="img/30.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+El cual analizándolo con VirusTotal nos reporta que es un fichero malicioso.
+<p align="center">
+    <img src="img/31.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Al principio del fichero 2015-09-07-2.dc encontramos la sentencia "Enter password for 
+C:\Users\Ann\MyHome (12:47:16) 
+safePlace 
+SafePlace 
+" 
+<p align="center">
+    <img src="img/32.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Navegamos al directorio y observamos que los resultados del análisis de MyHome muestran que este 
+encriptado. 
+<p align="center">
+    <img src="img/33.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Además, en las propiedades observamos que tiene un tamaño sospechoso. 
+<p align="center">
+    <img src="img/34.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+En el directorio Roaming, como vimos anteriormente, hemos encontrado una carpeta llamada 
+TrueCrypt. TrueCrypt es una aplicación de cifrado de discos y contenedores de archivos que permite 
+crear volúmenes cifrados para almacenar datos de forma segura; por tanto, es probable que 
+MyHome sea en realidad un contenedor cifrado con TrueCrypt. 
+Por lo tanto, en una máquina virtual nos descargamos la herramienta TrueCrypt, extraemos el 
+contenedor de archivos MyHome y tratamos de montarlo en la máquina virtual.
+<p align="center">
+    <img src="img/35.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Usamos la contraseña correcta "SafePlace" 
+<p align="center">
+    <img src="img/36.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Comprobamos que se monta el volumen y podemos acceder a los ficheros de su interior. 
+<p align="center">
+    <img src="img/37.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+El contenido del fichero pwd.txt.txt vemos las credenciales de ambos usuarios del sistema operativo, 
+una contraseña para la herramienta S-Tools, un programa de esteganografía para Windows que 
+permite ocultar datos dentro de archivos, credenciales de Tom que posiblemente sean para descifrar 
+el volumen MyHome, credenciales de correos tanto de Tom como Ann y credenciales de inicio de 
+sesión a skype de Ann. 
+<p align="center">
+    <img src="img/38.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
 <h2 id="bloque-2-informe-pericial">3. Bloque 2 – Informe Pericial</h2>
 
 Resumen del Bloque 2... 
