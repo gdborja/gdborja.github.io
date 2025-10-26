@@ -418,22 +418,26 @@ Herramientas y versiones:
 
 Durante el análisis forense de la imagen digital se han identificado y documentado las 
 siguientes evidencias, numeradas para su fácil referencia: 
+
 Evidencia E-01: Registro de apagado y arranque 
 A través del análisis de las claves del Registro SYSTEM y SOFTWARE con Autopsy y Register 
 Explorer, se determinó que el último apagado del equipo ocurrió el 9 de abril de 2024 a las 
 13:27:57 CEST. El sistema operativo corresponde a Windows 7 Professional sin Service Pack 
 instalado. 
+
 Evidencia E-02: Documento Pendientes.ods 
 Recuperado de la papelera de reciclaje de la usuaria “Ann” mediante Autopsy, este archivo 
 contiene listados parciales de posibles números de tarjetas Visa. El contenido muestra 
 patrones consistentes con actividades de fraude bancario (por ejemplo, series de dieciséis 
 dígitos con formatos válidos de tarjetas). 
+
 Evidencia E-03: Fotografías con metadatos GPS 
 En la carpeta Users/Ann/Pictures se localizó la imagen 20150907_162718.jpg. Sus 
 metadatos inspeccionados en Autopsy, revelan coordenadas geográficas (41.611493 N, 
 2.081493 E), correspondientes a Granollers. Vinculado con la conversación de Skype entre 
 Ann y Aram, donde acuerdan un punto de reunión para realizar un pago de pedidos de 
 tarjetas. 
+
 Evidencia E-04: Archivo comprimido malicioso 
 Mediante la exploración de descargas en Autopsy, se identificó ListadoNumeraciones.zip en 
 Users/Ann/Downloads. Este ZIP contenía LlistatNumeracions.exe, detectado como malware 
@@ -447,6 +451,7 @@ herramienta y, por lo tanto, un posible volumen cifrado con TrueCrypt. El volume
 encontró en la ruta Users/Ann/MyHome. Al montarlo con la contraseña “SafePlace” 
 (recuperada durante del fichero 2015-09-07-2.dc), se accedió a ficheros con credenciales de 
 usuarios. 
+
 Evidencia E-06: Base de datos de Skype (main.db) 
 Con DB Browser for SQLite se abrió la base de datos de Skype 
 /Users/Ann/AppData/Roaming/Skype/annetom22/main.db  . Se recuperaron 
@@ -456,6 +461,7 @@ Así mismo el intento de Ricky de infectar el equipo de Ann promoviendo que desc
 software había compartido por WeTransfer. 
 Con Aram768, cita para la entrega de tarjetas “el sábado a las 17:00” y envío de fotografías 
 para ensenar la localización del lugar. 
+
 Evidencia E-07: Historial de navegación de Firefox (places.sqlite) 
 En el perfil de Firefox 
 (Users/Ann/AppData/Roaming/Mozilla/Firefox/Profiles/xz1o6yiz.default/places.sqlite) se 
@@ -474,7 +480,6 @@ manipulación y codificación de datos de tarjetas bancarias, inclusión de soft
 malicioso destinado a lectura y escritura de bandas magnéticas (msr 206, TheJerm) y 
 acuerdos privados entre usuarios para disposición del “último lote de tarjetas”.
 
-Análisis Forense Informático   Página | 37 
 2. Participación de los implicados: Las conversaciones de Skype y los archivos cifrados 
 señalan a Ann (usuario del sistema) como nexo con terceros (Ricky, Aram) y posible 
 intermediaria con Tom. 
@@ -482,6 +487,7 @@ intermediaria con Tom.
 de custodia y comprobando integridad mediante hashes. Las herramientas 
 empleadas (Autopsy, DB Browser, TrueCrypt) son estándares en pericia forense 
 digital. 
+
 4. Limitaciones: 
 a. No se dispone de evidencias volátiles, como la memoria RAM del equipo 
 analizado ni de los dispositivos móviles de los implicados. 
