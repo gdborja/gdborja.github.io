@@ -350,32 +350,168 @@ tarjetas de crédito, pero tenía malware en su interior.
 
 <h2 id="bloque-2-informe-pericial">3. Bloque 2 – Informe Pericial</h2>
 
-Resumen del Bloque 2... 
-
 <h3 id="bloque-2-introduccion">3.1 Introducción</h3>
 
-Contenido subsección 3.1... 
+En mi calidad de perito forense informático, a continuación, se presenta el Informe Pericial 
+que recoge y ordena de forma estructurada los hallazgos obtenidos durante el análisis 
+forense de la imagen digital cedida. 
+• Perito: Borja García Dévora 
+• Formación: Estudiante del Curso de Especialización en Ciberseguridad en Tecnologías 
+de la Información, CIFP César Manrique 
+• Fecha del informe: 26 de mayo de 2025 
+• Declaración de veracidad: Declaro que los hechos y hallazgos descritos en este informe 
+son veraces, completos y objetivos, sin introducir valoraciones personales que 
+desvirtúen la evidencia recogida. 
 
 <h3 id="bloque-2-objeto-y-alcance">3.2 Objeto y alcance</h3>
 
-Contenido subsección 3.2... 
+Objeto pericial: Determinar, mediante el análisis forense de la imagen E01 del disco duro 
+aportado, la existencia, alcance y circunstancias de indicios de actividad delictiva relacionada 
+con el fraude de tarjetas bancarias, identificando las herramientas maliciosas empleadas, las 
+comunicaciones y descargas asociadas, los responsables y la información sustraída 
+El Alcance del peritaje abarca: 
+1. Verificación de la integridad de la imagen digital. 
+2. Identificación y extracción de evidencias de sistema de ficheros, registro de Windows 
+(SOFTWARE, SYSTEM, SAM), aplicaciones o directorios de usuario. 
+3. Análisis de archivos eliminados recuperados. 
+4. Examen de bases de datos SQLite de mensajería instantánea (Skype). 
+5. Análisis de contenedores cifrados con TrueCrypt. 
+6. Investigación de artefactos de software malicioso y datos sensibles (tarjetas, 
+credenciales).  
+7. Investigación del historial de navegación y descargas. 
 
 <h3 id="bloque-2-metodologia">3.3 Metodología</h3>
+Se han seguido las fases definidas en la norma UNE 197010:2015, adaptadas al entorno 
+digital. 
+El proceso comenzó con la adquisición y verificación de la imagen proporcionada 
+Ann_HD.E01. 
+Se llevó a cabo el fusionado de los fragmentos obtenidos y la posterior creación de una 
+imagen forense en formato RAW utilizando la herramienta FTK Imager. A continuación, se 
+calcularon los valores hash MD5 y SHA-1 con el fin de garantizar la integridad de la evidencia 
+digital y preservar la cadena de custodia. 
+Preservación y custodia (Inventado según apuntes y norma UNE): 
+Se realizó el etiquetado y registro detallado de cada fase del proceso en una bitácora, 
+asegurando la trazabilidad de todas las acciones efectuadas. La evidencia fue almacenada en 
+medios seguros con acceso restringido, garantizando su integridad y cumpliendo con los 
+principios de la cadena de custodia. 
+Análisis forense: 
+Se utilizó Autopsy para la exploración del sistema de archivos, la recuperación de archivos 
+eliminados y el análisis de metadatos, especialmente en imágenes. Mediante DB Browser 
+for SQLite se accedió y consultó la base de datos main.db de Skype, extrayendo 
+conversaciones y registros de transferencia de archivos. 
+Asimismo, se empleó TrueCrypt para montar y acceder al contenedor cifrado MyHome, 
+utilizando la contraseña hallada: "SafePlace". 
+Como herramientas complementarias, se recurrió a Registry Explorer para el análisis del 
+registro de Windows y a VirusTotal para verificar la presencia de código malicioso en 
+archivos ejecutables sospechosos.
 
-Contenido subsección 3.3... 
+Herramientas y versiones: 
+• Autopsy 4.19.3 
+• FTK Imager 4.7.3.81 
+• DB Browser for SQLite v3.12.2 
+• Register Explorer 1.2.0.0 
+• TrueCrypt 7.1a 
+• Virus Total versión Web 
+ 
 
 <h3 id="bloque-2-resultados-y-evidencias">3.4 Resultados y evidencias</h3>
 
-Contenido subsección 3.4... 
+Durante el análisis forense de la imagen digital se han identificado y documentado las 
+siguientes evidencias, numeradas para su fácil referencia: 
+Evidencia E-01: Registro de apagado y arranque 
+A través del análisis de las claves del Registro SYSTEM y SOFTWARE con Autopsy y Register 
+Explorer, se determinó que el último apagado del equipo ocurrió el 9 de abril de 2024 a las 
+13:27:57 CEST. El sistema operativo corresponde a Windows 7 Professional sin Service Pack 
+instalado. 
+Evidencia E-02: Documento Pendientes.ods 
+Recuperado de la papelera de reciclaje de la usuaria “Ann” mediante Autopsy, este archivo 
+contiene listados parciales de posibles números de tarjetas Visa. El contenido muestra 
+patrones consistentes con actividades de fraude bancario (por ejemplo, series de dieciséis 
+dígitos con formatos válidos de tarjetas). 
+Evidencia E-03: Fotografías con metadatos GPS 
+En la carpeta Users/Ann/Pictures se localizó la imagen 20150907_162718.jpg. Sus 
+metadatos inspeccionados en Autopsy, revelan coordenadas geográficas (41.611493 N, 
+2.081493 E), correspondientes a Granollers. Vinculado con la conversación de Skype entre 
+Ann y Aram, donde acuerdan un punto de reunión para realizar un pago de pedidos de 
+tarjetas. 
+Evidencia E-04: Archivo comprimido malicioso 
+Mediante la exploración de descargas en Autopsy, se identificó ListadoNumeraciones.zip en 
+Users/Ann/Downloads. Este ZIP contenía LlistatNumeracions.exe, detectado como malware 
+por VirusTotal. La contraseña del ZIP, “KaPow581!”, se extrae del fichero 2015-09-07-2.dc 
+localizado en el directorio Users/Ann/AppData/Roaming/dclogs/ y posteriormente se 
+comprueba en los registros de conversación de Skype entre Ann y Ricky Rodríguez. 
+
+Evidencia E-05: Contenedor cifrado MyHome 
+En la ruta Roaming/TrueCrypt, se halló evidencias de la instalación en el sistema de esta 
+herramienta y, por lo tanto, un posible volumen cifrado con TrueCrypt. El volumen se 
+encontró en la ruta Users/Ann/MyHome. Al montarlo con la contraseña “SafePlace” 
+(recuperada durante del fichero 2015-09-07-2.dc), se accedió a ficheros con credenciales de 
+usuarios. 
+Evidencia E-06: Base de datos de Skype (main.db) 
+Con DB Browser for SQLite se abrió la base de datos de Skype 
+/Users/Ann/AppData/Roaming/Skype/annetom22/main.db  . Se recuperaron 
+conversaciones clave: 
+Con Ricky Rodríguez García, intercambio de contraseñas y referencias a “recuerdos a Tom”. 
+Así mismo el intento de Ricky de infectar el equipo de Ann promoviendo que descargara el 
+software había compartido por WeTransfer. 
+Con Aram768, cita para la entrega de tarjetas “el sábado a las 17:00” y envío de fotografías 
+para ensenar la localización del lugar. 
+Evidencia E-07: Historial de navegación de Firefox (places.sqlite) 
+En el perfil de Firefox 
+(Users/Ann/AppData/Roaming/Mozilla/Firefox/Profiles/xz1o6yiz.default/places.sqlite) se 
+halló registro de la descarga de ListadoNumeraciones.zip desde WeTransfer, fichero que le 
+había compartido Ricky. Además, se documentaron búsquedas de compra de la “msr 206” 
+(grabadora de banda magnética), búsquedas para aprender a cómo utilizarla y la descarga de 
+“TheJerm.rar”, dedicado a la codificación de bandas de tarjetas. 
+Cada una de estas evidencias ha sido obtenida respetando la cadena de custodia y 
+verificando la integridad mediante hashes criptográficos, garantizando así su fiabilidad en 
+procedimiento judicial. 
 
 <h3 id="bloque-2-conclusiones-periciales">3.5 Conclusiones periciales</h3>
 
-Contenido subsección 3.5... 
+1. Existencia de conducta fraudulenta: Se hallaron múltiples evidencias de 
+manipulación y codificación de datos de tarjetas bancarias, inclusión de software 
+malicioso destinado a lectura y escritura de bandas magnéticas (msr 206, TheJerm) y 
+acuerdos privados entre usuarios para disposición del “último lote de tarjetas”.
+
+Análisis Forense Informático   Página | 37 
+2. Participación de los implicados: Las conversaciones de Skype y los archivos cifrados 
+señalan a Ann (usuario del sistema) como nexo con terceros (Ricky, Aram) y posible 
+intermediaria con Tom. 
+3. Fiabilidad de la evidencia: Todos los artefactos se obtuvieron respetando la cadena 
+de custodia y comprobando integridad mediante hashes. Las herramientas 
+empleadas (Autopsy, DB Browser, TrueCrypt) son estándares en pericia forense 
+digital. 
+4. Limitaciones: 
+a. No se dispone de evidencias volátiles, como la memoria RAM del equipo 
+analizado ni de los dispositivos móviles de los implicados. 
+b. Imposibilidad de utilizar las credenciales obtenidas de la plataforma Skype 
+debido a su obsolescencia. 
 
 <h3 id="bloque-2-anexo">3.6 Anexo</h3>
 
-Contenido subsección 3.6... 
-
+<p align="center">
+    <img src="img/62.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+<p align="center">
+    <img src="img/63.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>  
+Capturas de pantalla relevantes: 
+Conversación entre Ricky Rodríguez y Ann.
+<p align="center">
+    <img src="img/64.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Conversación entre Ann y Aram donde se envían fotos para acordar un punto de reunión y 
+entrega. 
+<p align="center">
+    <img src="img/65.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Localización del punto de entrega. 
+<p align="center">
+    <img src="img/66.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
 <h2 id="conclusion">4. Conclusión</h2>
 
-Contenido de la Conclusión... 
+En el presente trabajo se ha cumplido el objetivo de realizar un examen forense íntegro de la imagen 
+digital aportada y de plasmar sus resultados en un Informe Pericial conforme a la norma UNE 
+197010:2015 y a las buenas prácticas de la pericia informática.  
