@@ -1,3 +1,9 @@
+## Práctica de Análisis Forense: Investigación de Evidencia Digital e informe pericial
+
+<p align="center">
+    <img src="img/1.1.png" alt="comprobar integridad" width="400px">
+</p>
+
 ## Índice
 
 - [1. Introducción](#introduccion) 
