@@ -361,10 +361,14 @@ tarjetas de crédito, pero tenía malware en su interior.
 En mi calidad de perito forense informático, a continuación, se presenta el Informe Pericial 
 que recoge y ordena de forma estructurada los hallazgos obtenidos durante el análisis 
 forense de la imagen digital cedida. 
+
 • Perito: Borja García Dévora 
+
 • Formación: Estudiante del Curso de Especialización en Ciberseguridad en Tecnologías 
 de la Información, CIFP César Manrique 
+
 • Fecha del informe: 26 de mayo de 2025 
+
 • Declaración de veracidad: Declaro que los hechos y hallazgos descritos en este informe 
 son veraces, completos y objetivos, sin introducir valoraciones personales que 
 desvirtúen la evidencia recogida. 
@@ -374,8 +378,10 @@ desvirtúen la evidencia recogida.
 Objeto pericial: Determinar, mediante el análisis forense de la imagen E01 del disco duro 
 aportado, la existencia, alcance y circunstancias de indicios de actividad delictiva relacionada 
 con el fraude de tarjetas bancarias, identificando las herramientas maliciosas empleadas, las 
-comunicaciones y descargas asociadas, los responsables y la información sustraída 
+comunicaciones y descargas asociadas, los responsables y la información sustraída.
+
 El Alcance del peritaje abarca: 
+
 1. Verificación de la integridad de la imagen digital. 
 2. Identificación y extracción de evidencias de sistema de ficheros, registro de Windows 
 (SOFTWARE, SYSTEM, SAM), aplicaciones o directorios de usuario. 
