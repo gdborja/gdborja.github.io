@@ -415,10 +415,15 @@ Como herramientas complementarias, se recurrió a Registry Explorer para el aná
 Herramientas y versiones: 
 
 • Autopsy 4.19.3 
+
 • FTK Imager 4.7.3.81 
+
 • DB Browser for SQLite v3.12.2 
+
 • Register Explorer 1.2.0.0 
+
 • TrueCrypt 7.1a 
+
 • Virus Total versión Web 
  
 
