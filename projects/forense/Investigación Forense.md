@@ -335,8 +335,7 @@ Destacamos las siguientes búsquedas que realiza:
     <img src="img/57.png" alt="Comprobar tamaño de la partición" width="400px">
 </p> 
 Grabadora de tarjetas magnéticas MSR 206. 
-https://www.google.es/search?q=msr+206&ie=utf-8&oe=utf-
-8&gws_rd=cr&ei=eGftVfzGNYO5UeeUhdAL 
+https://www.google.es/search?q=msr+206&ie=utf-8&oe=utf-8&gws_rd=cr&ei=eGftVfzGNYO5UeeUhdAL 
 <p align="center">
     <img src="img/58.png" alt="Comprobar tamaño de la partición" width="400px">
 </p> 
@@ -395,29 +394,26 @@ credenciales).
 <h3 id="bloque-2-metodologia">3.3 Metodología</h3>
 Se han seguido las fases definidas en la norma UNE 197010:2015, adaptadas al entorno 
 digital. 
-El proceso comenzó con la adquisición y verificación de la imagen proporcionada 
-Ann_HD.E01. 
+
+El proceso comenzó con la adquisición y verificación de la imagen proporcionada Ann_HD.E01.
+
 Se llevó a cabo el fusionado de los fragmentos obtenidos y la posterior creación de una 
 imagen forense en formato RAW utilizando la herramienta FTK Imager. A continuación, se 
 calcularon los valores hash MD5 y SHA-1 con el fin de garantizar la integridad de la evidencia 
 digital y preservar la cadena de custodia. 
+
 Preservación y custodia (Inventado según apuntes y norma UNE): 
-Se realizó el etiquetado y registro detallado de cada fase del proceso en una bitácora, 
-asegurando la trazabilidad de todas las acciones efectuadas. La evidencia fue almacenada en 
-medios seguros con acceso restringido, garantizando su integridad y cumpliendo con los 
-principios de la cadena de custodia. 
+Se realizó el etiquetado y registro detallado de cada fase del proceso en una bitácora, asegurando la trazabilidad de todas las acciones efectuadas. La evidencia fue almacenada en medios seguros con acceso restringido, garantizando su integridad y cumpliendo con los principios de la cadena de custodia. 
+
 Análisis forense: 
-Se utilizó Autopsy para la exploración del sistema de archivos, la recuperación de archivos 
-eliminados y el análisis de metadatos, especialmente en imágenes. Mediante DB Browser 
-for SQLite se accedió y consultó la base de datos main.db de Skype, extrayendo 
-conversaciones y registros de transferencia de archivos. 
-Asimismo, se empleó TrueCrypt para montar y acceder al contenedor cifrado MyHome, 
-utilizando la contraseña hallada: "SafePlace". 
-Como herramientas complementarias, se recurrió a Registry Explorer para el análisis del 
-registro de Windows y a VirusTotal para verificar la presencia de código malicioso en 
-archivos ejecutables sospechosos.
+
+Se utilizó Autopsy para la exploración del sistema de archivos, la recuperación de archivos eliminados y el análisis de metadatos, especialmente en imágenes. Mediante DB Browser for SQLite se accedió y consultó la base de datos main.db de Skype, extrayendo conversaciones y registros de transferencia de archivos. 
+
+Asimismo, se empleó TrueCrypt para montar y acceder al contenedor cifrado MyHome, utilizando la contraseña hallada: "SafePlace". 
+Como herramientas complementarias, se recurrió a Registry Explorer para el análisis del registro de Windows y a VirusTotal para verificar la presencia de código malicioso en archivos ejecutables sospechosos.
 
 Herramientas y versiones: 
+
 • Autopsy 4.19.3 
 • FTK Imager 4.7.3.81 
 • DB Browser for SQLite v3.12.2 
