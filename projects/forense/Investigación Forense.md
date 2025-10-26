@@ -231,6 +231,123 @@ sesión a skype de Ann.
 <p align="center">
     <img src="img/38.png" alt="Comprobar tamaño de la partición" width="400px">
 </p>
+Funciones de resumenes del fichero.
+<p align="center">
+    <img src="img/39.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Propiedades del fichero. 
+<p align="center">
+    <img src="img/40.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+El contenido del fichero Tarjetas_Ricky.ods
+<p align="center">
+    <img src="img/41.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Hashes de Tarjetas_Ricky.ods
+<p align="center">
+    <img src="img/42.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Propiedades.
+<p align="center">
+    <img src="img/43.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Contenido del fichero TOTAL.ods y hashes.
+<p align="center">
+    <img src="img/44.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Propiedades.
+<p align="center">
+    <img src="img/45.png" alt="Comprobar tamaño de la partición" width="400px">
+</p>
+Del mismo modo, indagando en el directorio Roaming encuentro una carpeta con nombre 
+B7VDmwss, la cual tienen otro ejecutable que apunta a la referencia de un fichero localizado en 
+/users/ann/downloads/thejerm.rar/thejerm.exe 
+<p align="center">
+    <img src="img/46.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Y es otro programa malicioso.
+<p align="center">
+    <img src="img/47.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Buscando información acerca de este último ejecutable encuentro que es un programa para codificar 
+tarjetas de crédito. 
+<p align="center">
+    <img src="img/48.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Debido a que he encontrado un trozo de una conversación en skype decido a indagar en el directorio 
+Users/Ann/AppData/Roaming/Skype/annetom22 encontrando la base de datos main.db 
+<p align="center">
+    <img src="img/49.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+La extraigo y procedo a analizarla con la herramienta DB Browser for SQLite. Analizando la tabla 
+Messages encontramos conversaciones de Ann con el usuario rickyrodriguezgarcia y aram768
+<p align="center">
+    <img src="img/50.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Destacamos la siguiente conversación entre Ann y Ricky Rodríguez García donde vemos que este 
+último le pide la contraseña KaPow581! para descomprimir el fichero ListadoNumeraciones.zip que 
+al parecer le ha compartido. 
+<p align="center">
+    <img src="img/51.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Puede ser relevante destacar la expresión “Recuerdos a Tom”, debido a la coincidencia en la 
+existencia de un usuario llamado Tom. 
+Cabe destacar la siguiente conversación, en la que el usuario live:aram768 contacta a Anne G.H. 
+(annetom22) para concertar un encuentro y saldar el “último lote de tarjetas” pendiente; tras 
+mencionar que ha descubierto un lugar “muy discreto” en la ciudad, envía tres fotos 
+(20150907_162718.jpg, 20150907_162746.jpg y 20150907_162819.jpg), que Ann reconoce, y ambos 
+acuerdan verse el próximo sábado a las 17:00.
+<p align="center">
+    <img src="img/52.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Otra conversación es la siguiente, donde Ricky le envía a Ann un enlace por WeTransfer y al parecer 
+Ann detecta algo raro en lo que descarga.
+<p align="center">
+    <img src="img/53.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+En la tabla Transfers vemos las imágenes que aram le envió a Ann y se almacenaron en el directorio 
+C:\Users\Ann\AppData\Roaming\Skype\My Skype Received Files\ imágenes anteriormente 
+analizadas y que fueron sacadas por Aram con el dispositivo Samsung. 
+<p align="center">
+    <img src="img/54.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Analizando la tabla Contacts apreciamos el nombre completo de los usuarios. 
+<p align="center">
+    <img src="img/55.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Continuamos buscando en el historial del explorador para así descubrir que fue lo que descargo Ann 
+por Wetranfer. Accedemos al directorio 
+Users/Ann/AppData/Roaming/Mozilla/Firefox/Profiles/xz1o6yiz.default/ y abrimos la base de 
+datos places.sqlite donde se guardan principalmente el historial de búsqueda y marcadores de 
+navegador Firefox. Encontramos que Ann descargo de Wetransfer el fichero ListadoNumeraciones.zip en cual analizamos anteriormente y verificamos que era un programa 
+malicioso. 
+<p align="center">
+    <img src="img/56.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Destacamos las siguientes búsquedas que realiza: 
+<p align="center">
+    <img src="img/57.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Grabadora de tarjetas magnéticas MSR 206. 
+https://www.google.es/search?q=msr+206&ie=utf-8&oe=utf-
+8&gws_rd=cr&ei=eGftVfzGNYO5UeeUhdAL 
+<p align="center">
+    <img src="img/58.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+La cual compra por Ebay.
+<p align="center">
+    <img src="img/59.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Después busca tutoriales para aprender a utilizarla. 
+<p align="center">
+    <img src="img/60.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+Descarga la herramienta TheJerm la cual analizamos antes y comprobamos que sirve para codificar 
+tarjetas de crédito, pero tenía malware en su interior. 
+<p align="center">
+    <img src="img/61.png" alt="Comprobar tamaño de la partición" width="400px">
+</p> 
+
 <h2 id="bloque-2-informe-pericial">3. Bloque 2 – Informe Pericial</h2>
 
 Resumen del Bloque 2... 
