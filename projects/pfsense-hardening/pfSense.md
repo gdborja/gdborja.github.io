@@ -25,16 +25,18 @@ pfSense es una solución de firewall y enrutamiento ampliamente utilizada en ent
 ## Desarrollo
 
 ### 3.1. Crear máquina virtual en VirtualBox
-En primer lugar, añadimos dos adaptadores de red en VirtualBox y los configuramos en modo Host‑Only, de modo que se crean interfaces virtuales que permiten la comunicación entre el anfitrión y la VM en redes privadas, lo que te permite simular un entorno realista con varias subredes y probar reglas de firewall, NAT o enrutamiento: 
+En primer lugar, creamos un adaptador virtual con la herramienta de red de VirtualBox el cual nos servirá para conectarnos con la máquina virtual pfSense y nuestro host teniendo en cuenta el nuevo rango de red.
 <p>
   <img src="img/1.png" alt="interfaces de red" width="400px"/>
 </p>
 
 En la máquina virtual, habilitamos tres adaptadores:
-1. En modo puente, el cual nos proporcionará una ip con salida a internet.
-2. En modo solo anfitrion(host only) y selecionando el adaptador 2 que creamos anteriormente con la IP 192.168.3.193/27, el cual nos servirá para crear las subinterfaces en pfSense.
 
-3. En modo solo anfitrión asignandole el tercer adaptador que creamos y el cual simulará la conexión física a la máquina pfsense si fuera un entorno real(equivaldría a conectar un cable de red desde la tarjeta de red del firewall a un switch o a otro equipo).
+Adaptador 1 → Modo puente (Bridged): proporciona una IP con salida a Internet (WAN).
+
+Adaptador 2 → Modo solo anfitrión (Host-only): actúa como red de administración (LAN), permitiendo acceder a la interfaz web de pfSense desde el host o en un entorno real sería la  interfaz que se conectaría a un PC o red local para administrar el firewall.
+
+Adaptador 3 → Modo puente (Bridged Adapter): simula la conexión física de pfSense hacia un switch real, y servirá como interfaz troncal (parent) para las VLANs creadas en pfSense.
 
 <p>
   <img src="img/2.png" alt="interfaces de red" width="400px"/>
@@ -54,17 +56,20 @@ Selecionamos el disco duro donde se va a realizar la instalación del sistema y 
 <p>
   <img src="img/5.png" alt="Instalación de pfSense en la máquina virtual" width="500px"/>
 </p>
-Una vez finalizada la instalación, asignaremos las direcciones IP a las interfaces seleccionando la opción 1 y pulsando Enter. Configuraremos el adaptador em0 con una dirección IP dinámica (DHCP) y el adaptador em1 con una dirección IP estática (dentro del rango), utilizando la siguiente configuración.
+Una vez finalizada la instalación, asignaremos las direcciones IP a las interfaces seleccionando la opción 2 y pulsando Enter. Configuraremos el adaptador le0 con una dirección IP dinámica (DHCP) y el adaptador le1 con una dirección IP estática (dentro del rango), utilizando la siguiente configuración.
 <p>
   <img src="img/6.png" alt="Instalación de pfSense en la máquina virtual" width="500px"/>
 </p>
-
+Accedemos al panel administrativo escribiendo en el navegador la IP asignada al segundo adaptador (192.168.3.222) e iniciamos sesión con las credenciales admin y pfsense
+<p>
+  <img src="img/7.png" alt="Creación de Vlans" width="500px"/>
+</p>
 
 ### 3.3 Crear las VLANs en el sistema pfSense y asignarlas a una tarjeta de red
 
 - Acceder al menú **Interfaces → Assignments → VLANs**.  
 <p>
-  <img src="img/7.png" alt="Creación de Vlans" width="500px"/>
+  <img src="img/8.png" alt="Creación de Vlans" width="500px"/>
 </p>
 
 - Crear y editar las distintas VLANs.  
