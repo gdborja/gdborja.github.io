@@ -27,7 +27,7 @@ pfSense es una solución de firewall y enrutamiento ampliamente utilizada en ent
 ### 3.1. Crear máquina virtual en VirtualBox
 En primer lugar, añadimos dos adaptadores de red en VirtualBox y los configuramos en modo Host‑Only, de modo que se crean interfaces virtuales que permiten la comunicación entre el anfitrión y la VM en redes privadas, lo que te permite simular un entorno realista con varias subredes y probar reglas de firewall, NAT o enrutamiento: 
 <p>
-  <img src="img/1.png" alt="interfaces de red"/>
+  <img src="img/1.png" alt="interfaces de red" width="400px"/>
 </p>
 
 En la máquina virtual, habilitamos tres adaptadores:
@@ -37,26 +37,26 @@ En la máquina virtual, habilitamos tres adaptadores:
 3. En modo solo anfitrión asignandole el tercer adaptador que creamos y el cual simulará la conexión física a la máquina pfsense si fuera un entorno real(equivaldría a conectar un cable de red desde la tarjeta de red del firewall a un switch o a otro equipo).
 
 <p>
-  <img src="img/2.png" alt="interfaces de red"/>
+  <img src="img/2.png" alt="interfaces de red" width="400px"/>
 </p>
 
 ### 3.2. Instalación del firewall pfSense
 Seleccionamos la opción “Install pfSense”.
 <p>
-  <img src="img/3.png" alt="Instalación de pfSense en la máquina virtual"/>
+  <img src="img/3.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
 </p>
 Dejamos el “keymap” y las opciones de particionado por defecto.
 Procedemos a la instalación configurando ZFS como "stripe" ya que no hemos creados discos virtuales donde almacenar las copias.
 <p>
-  <img src="img/4.png" alt="Instalación de pfSense en la máquina virtual"/>
+  <img src="img/4.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
 </p>
 Selecionamos el disco duro donde se va a realizar la instalación del sistema y esperamos a que finalice esta.
 <p>
-  <img src="img/5.png" alt="Instalación de pfSense en la máquina virtual"/>
+  <img src="img/5.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
 </p>
 Una vez finalizada la instalación, asignaremos las direcciones IP a las interfaces seleccionando la opción 1 y pulsando Enter. Configuraremos el adaptador em0 con una dirección IP dinámica (DHCP) y el adaptador em1 con una dirección IP estática (dentro del rango), utilizando la siguiente configuración.
 <p>
-  <img src="img/6.png" alt="Instalación de pfSense en la máquina virtual"/>
+  <img src="img/6.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
 </p>
 
 
