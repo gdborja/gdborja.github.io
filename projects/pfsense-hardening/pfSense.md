@@ -63,6 +63,10 @@ Una vez finalizada la instalación, asignaremos las direcciones IP a las interfa
 ### 3.3 Crear las VLANs en el sistema pfSense y asignarlas a una tarjeta de red
 
 - Acceder al menú **Interfaces → Assignments → VLANs**.  
+<p>
+  <img src="img/7.png" alt="Creación de Vlans" width="500px"/>
+</p>
+
 - Crear y editar las distintas VLANs.  
 - Asignarlas a una interfaz de red virtual.  
 - Activar las interfaces y asignarles direcciones IP.
