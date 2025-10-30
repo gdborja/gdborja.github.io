@@ -1,4 +1,4 @@
-## Investigación de Evidencia Digital e informe pericial
+<h1 align="center"> Investigación de Evidencia Digital e informe pericial </h1>
 
 <p align="center">
     <img src="img/1.1.png" alt="comprobar integridad" width="400px">
