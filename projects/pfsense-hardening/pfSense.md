@@ -60,6 +60,103 @@ Una vez finalizada la instalación, asignaremos las direcciones IP a las interfa
 </p>
 
 
+### 3.3 Crear las VLANs en el sistema pfSense y asignarlas a una tarjeta de red
+
+- Acceder al menú **Interfaces → Assignments → VLANs**.  
+- Crear y editar las distintas VLANs.  
+- Asignarlas a una interfaz de red virtual.  
+- Activar las interfaces y asignarles direcciones IP.
+
+---
+
+### 3.4 Activar el servicio de DHCP para las redes WiFi
+
+- Acceder a **Services → DHCP Server**.  
+- Habilitar el DHCP para:  
+  - **WiFi Corporativo**.  
+  - **WiFi de Invitados**.
+
+---
+
+### 3.5 Crear los Alias de las redes para trabajar con nombres
+
+- Ir a **Firewall → Aliases**.  
+- Crear o editar los alias de las redes.  
+- En la pestaña **Ports**, asignar alias a los puertos correspondientes.
+
+---
+
+### 3.6 Crear las reglas de firewall para bloquear tráfico entre redes
+
+#### Reglas LAN
+
+1. Regla anti-bloqueo (acceso a la interfaz web).  
+2. Permitir acceso a servidores definidos por alias “Servidores”.  
+3. Permitir tráfico IPv4 desde la LAN hacia cualquier destino.  
+4. Permitir tráfico IPv6 desde la LAN hacia cualquier destino.
+
+#### Reglas Administrativo
+
+- Permitir acceso al NAS, FTP, servidor web, contabilidad y correo.  
+- Permitir tráfico hacia el gateway.  
+- Restringir acceso a otras VLANs.  
+- Permitir tráfico no especificado.
+
+#### Reglas Comercial
+
+- Permitir acceso a NAS, FTP, web, contabilidad y correo.  
+- Permitir tráfico hacia el gateway.  
+- Bloquear acceso a otras VLANs.  
+- Permitir tráfico no especificado.
+
+#### Reglas Desarrollo
+
+- Permitir tráfico hacia NAS, FTP, web, contabilidad y correo.  
+- Permitir tráfico hacia su gateway.  
+- Bloquear acceso a otras subredes internas.  
+- Permitir tráfico restante.
+
+#### Reglas DMZ
+
+- Permitir tráfico hacia redes internas usando puertos de gestión.  
+- Permitir tráfico desde LAN hacia redes internas en puertos de servicios.
+
+#### Reglas VozIP
+
+- Permitir tráfico hacia su gateway.  
+- Bloquear tráfico hacia otras VLANs.
+
+#### Reglas I+D
+
+- Permitir tráfico hacia NAS, FTP, web, contabilidad y correo.  
+- Permitir tráfico hacia su gateway.  
+- Bloquear tráfico hacia otras subredes internas.  
+- Permitir tráfico restante.
+
+#### Reglas WiFi Corporativo
+
+- Permitir tráfico hacia NAS, FTP, web, contabilidad y correo.  
+- Permitir tráfico hacia su gateway.  
+- Bloquear acceso a otras VLANs.  
+- Permitir tráfico restante.
+
+#### Reglas WiFi Invitados
+
+- Permitir tráfico hacia su gateway y servidor web (HTTP y HTTPS).  
+- Bloquear tráfico hacia otras VLANs.
+
+---
+
+### 3.7 Abrir los puertos de los servidores para acceso desde el exterior (NAT)
+
+- Acceder a **Firewall → NAT**.  
+- Abrir los puertos necesarios para cada servidor utilizando los alias creados previamente.
+
+---
+
 ## Conclusión
-Texto final.
+
+La implementación de **pfSense**, siguiendo las instrucciones de este informe, permite disponer de un firewall robusto y personalizable para gestionar redes de forma segura.  
+El proceso garantiza el control del tráfico entre redes, la segmentación mediante VLANs y la configuración de servicios como DHCP y NAT.  
+Gracias a su flexibilidad y facilidad de uso, **pfSense** es una solución ideal para proteger y gestionar infraestructuras de red modernas, siendo una herramienta clave en el fortalecimiento de la seguridad informática.
 
