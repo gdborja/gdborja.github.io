@@ -43,20 +43,20 @@ En la máquina virtual, habilitamos tres adaptadores:
 ### 3.2. Instalación del firewall pfSense
 Seleccionamos la opción “Install pfSense”.
 <p>
-  <img src="img/3.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
+  <img src="img/3.png" alt="Instalación de pfSense en la máquina virtual" width="500px"/>
 </p>
 Dejamos el “keymap” y las opciones de particionado por defecto.
 Procedemos a la instalación configurando ZFS como "stripe" ya que no hemos creados discos virtuales donde almacenar las copias.
 <p>
-  <img src="img/4.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
+  <img src="img/4.png" alt="Instalación de pfSense en la máquina virtual" width="500px"/>
 </p>
 Selecionamos el disco duro donde se va a realizar la instalación del sistema y esperamos a que finalice esta.
 <p>
-  <img src="img/5.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
+  <img src="img/5.png" alt="Instalación de pfSense en la máquina virtual" width="500px"/>
 </p>
 Una vez finalizada la instalación, asignaremos las direcciones IP a las interfaces seleccionando la opción 1 y pulsando Enter. Configuraremos el adaptador em0 con una dirección IP dinámica (DHCP) y el adaptador em1 con una dirección IP estática (dentro del rango), utilizando la siguiente configuración.
 <p>
-  <img src="img/6.png" alt="Instalación de pfSense en la máquina virtual" width="400px"/>
+  <img src="img/6.png" alt="Instalación de pfSense en la máquina virtual" width="500px"/>
 </p>
 
 
