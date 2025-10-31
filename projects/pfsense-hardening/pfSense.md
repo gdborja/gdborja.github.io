@@ -106,10 +106,13 @@ pfSense lo refleja así:
   - Esta interfaz lógica (OPT2) corresponde a la VLAN 3.
   - El parent de esa VLAN es la tarjeta física le2.
   - El texto “opt1” aparece porque le2 ya estaba asignada como OPT1, y sobre ella se montó la VLAN.
-  - “VLAN_Administrativo” es la descripción se puso al crear la VLAN.
+  - “VLAN_Administrativo” es la descripción que se puso al crear la VLAN.
 
   <img src="img/13.png" alt="Creación de Vlans" width="500px"/>
 </p>
+
+**Realizaremos los mismos pasos por cada VLAN que tengamos.**
+
 
 ### 3.4 Activar el servicio de DHCP para las redes WiFi
 
