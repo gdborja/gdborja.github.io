@@ -63,23 +63,53 @@ Una vez finalizada la instalación, asignaremos las direcciones IP a las interfa
 <p>
   <img src="img/6.png" alt="Instalación de pfSense en la máquina virtual" width="500px"/>
 </p>
-Accedemos al panel administrativo escribiendo en el navegador la IP asignada al segundo adaptador (192.168.3.222) e iniciamos sesión con las credenciales admin y pfsense
+Accedemos al panel administrativo escribiendo en el navegador la IP asignada al segundo adaptador (192.168.3.222) e iniciamos sesión con las credenciales admin y pfsense.
 <p>
   <img src="img/7.png" alt="Creación de Vlans" width="500px"/>
 </p>
 
 ### 3.3 Crear las VLANs en el sistema pfSense y asignarlas a una tarjeta de red
 
-- Acceder al menú **Interfaces → Assignments → VLANs**.  
+- Acceder al menú **Interfaces → Assignments → VLANs** para definir las VLANs que se van a crear.
 <p>
   <img src="img/8.png" alt="Creación de Vlans" width="500px"/>
 </p>
 
-- Crear y editar las distintas VLANs.  
-- Asignarlas a una interfaz de red virtual.  
-- Activar las interfaces y asignarles direcciones IP.
+Comenzamos creando la VLAN del departamento de administración. Utilizamos le2 como la interfaz parent ya que  es la tarjeta de red física(Teoricamente) que estará conectada al switch en modo trunk. Solo esa interfaz puede enviar y recibir los paquetes con etiquetas VLAN (802.1Q).
 
----
+<p>
+  <img src="img/9.png" alt="Creación de Vlans" width="500px"/>
+</p>
+
+Navegamos hasta el apartado **Interface Assigments** y añadimos la tarjeta de red le2 pulsando el boton verde Add, creando así la interfaz lógica en pfSense.
+ <p>
+  <img src="img/10.png" alt="Creación de Vlans" width="500px"/>
+</p>
+A continuación se verá de la siguiente manera.
+<p>
+  <img src="img/11.png" alt="Creación de Vlans" width="500px"/>
+</p>
+
+De la misma forma, pfSense nos está avisando que también tenemos disponible un nuevo **network port** perteneciente a la VLAN 3 que creamos anteriormente para el departamento de administración. La añadimos. Al darle a Add:
+
+- pfSense tomará esa VLAN 3 y la añadirá a la lista de interfaces asignadas.
+- Automáticamente se creará OPT2 (o el siguiente número disponible).
+- A partir de ahí, podrás entrar en Interfaces > OPT2, habilitarla, darle un nombre (ej. “Administrativo”), asignarle IP, máscara, DHCP, etc.
+- Asignarla en Interface Assignments es lo que la convierte en una interfaz lógica que puedes administrar como si fuera una red independiente.
+<p>
+  <img src="img/12.png" alt="Creación de Vlans" width="500px"/>
+</p>
+
+pfSense lo refleja así:
+- OPT2 → es la interfaz lógica recién creada.
+- VLAN 3 on le2 – opt1 (VLAN_Administrativo) → te está diciendo:
+  - Esta interfaz lógica (OPT2) corresponde a la VLAN 3.
+  - El parent de esa VLAN es la tarjeta física le2.
+  - El texto “opt1” aparece porque le2 ya estaba asignada como OPT1, y sobre ella se montó la VLAN.
+  - “VLAN_Administrativo” es la descripción se puso al crear la VLAN.
+
+  <img src="img/13.png" alt="Creación de Vlans" width="500px"/>
+</p>
 
 ### 3.4 Activar el servicio de DHCP para las redes WiFi
 
