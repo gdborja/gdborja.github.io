@@ -138,7 +138,7 @@ Comprobamos que está habilitada en el panel principal del pfSense. Habilitar la
 <p>
   <img src="img/18.png" alt="Asignación de IP a VLAN" width="500px"/>
 </p>
-Las initerfaces quedarían de la siguiente forma.
+Las interfaces quedarían de la siguiente forma.
 <p>
   <img src="img/19.png" alt="Asignación de IP a VLAN" width="500px"/>
 </p>
