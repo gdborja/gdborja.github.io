@@ -112,6 +112,7 @@ pfSense lo refleja así:
 </p>
 
 **Realizaremos los mismos pasos por cada VLAN que tengamos.**
+
 **Creación**
 <p>
   <img src="img/14.png" alt="Creación de Vlans" width="500px"/>
@@ -122,7 +123,27 @@ pfSense lo refleja así:
   <img src="img/15.png" alt="Creación de Vlans" width="500px"/>
 </p>
 
-### 3.4 Activar el servicio de DHCP para las redes WiFi
+### 3.4. Asignar el direccionamiento de red a cada VLAN
+En este paso entraremos en la interfaz lógica de cada VLAN para asignarle la IP de gateway que se definió anteriormente en el plan de direccionamiento.
+
+Comenzamos por la interfaz OPT2 ya que OPT1 no lleva IP porque es la interfaz física que conecta al switch y sirve de base para las VLANs.
+<p>
+  <img src="img/16.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+Dentro de la configuración de la interfaz OPT2, la renombramos a Comercial, ya que pertenece a la VLAN_Comercial, la habilitamos y asignamos una IP estática dentro de su subred, la IP actua como gateway de la subred para los clientes.
+<p>
+  <img src="img/17.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+Comprobamos que está habilitada en el panel principal del pfSense. Habilitar la interfaz significa darle vida a esa VLAN dentro de pfSense; pasa de ser solo un puerto lógico a convertirse en una red activa, con su propia IP, reglas y servicios. Sin habilitarla, pfSense no la usa ni la muestra en la mayoría de configuraciones.
+<p>
+  <img src="img/18.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+Las initerfaces quedarían de la siguiente forma.
+<p>
+  <img src="img/19.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+
+### 3.4.1 Activar el servicio de DHCP para las redes WiFi
 
 - Acceder a **Services → DHCP Server**.  
 - Habilitar el DHCP para:  
