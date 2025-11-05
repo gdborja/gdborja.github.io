@@ -145,17 +145,41 @@ Las interfaces quedarían de la siguiente forma.
 
 ### 3.4.1 Activar el servicio de DHCP para las redes WiFi
 
-- Acceder a **Services → DHCP Server**.  
-- Habilitar el DHCP para:  
-  - **WiFi Corporativo**.  
-  - **WiFi de Invitados**.
+Habilitar el DHCP permite que los dispositivos obtengan automáticamente su dirección IP, máscara, gateway y DNS sin tener que configurarlos manualmente. Al tratarse de una red WIFI, habilitar este servicio es ensencial para su funcinamiento.
 
----
+Accediendo a **Services → DHCP Server**. 
+<p>
+  <img src="img/20.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+
+- Habilitamos el DHCP y definimos el rango de direcciones a repartir en:  
+
+  - **VLAN_WiFiCorpo**.
+<p>
+  <img src="img/21.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+
+  - **VLAN_WiFi_Inv**.
+<p>
+  <img src="img/22.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+
 
 ### 3.5 Crear los Alias de las redes para trabajar con nombres
 
-- Ir a **Firewall → Aliases**.  
-- Crear o editar los alias de las redes.  
+Trabajar con alias en pfSense da orden, claridad y flexibilidad.Permite administrar reglas de firewall, NAT y QoS de forma centralizada, evitando errores y facilitando cambios futuros.
+
+- Ir a **Firewall → Aliases**. 
+<p>
+  <img src="img/23.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+
+- Crear los alias de las redes.  
+   -Comenzamos creando un alia **Redes Internas** para agrupar todas las redes ya que esto nos dará orden y nos facilitará el uso de reglas de firewall y el mantenimiento en un futuro.
+<p>
+  <img src="img/24.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+
 - En la pestaña **Ports**, asignar alias a los puertos correspondientes.
 
 ---
