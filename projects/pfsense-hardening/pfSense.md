@@ -180,9 +180,26 @@ Trabajar con alias en pfSense da orden, claridad y flexibilidad.Permite administ
   <img src="img/24.png" alt="Asignación de IP a VLAN" width="500px"/>
 </p>
 
-- En la pestaña **Ports**, asignar alias a los puertos correspondientes.
+<p>
+  <img src="img/25.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+- Creamos alias para cada red.
+<p>
+  <img src="img/26.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+- Creamos alias para el conjunto de servidores de la empresa.
+<p>
+  <img src="img/27.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
 
----
+- Creamos alias para cada uno de los servidores y así identificarlos.
+
+<p>
+  <img src="img/28.png" alt="Asignación de IP a VLAN" width="500px"/>
+</p>
+- En la pestaña **Ports**, asignamos alias a los puertos correspondientes.
+
+
 
 ### 3.6 Crear las reglas de firewall para bloquear tráfico entre redes
 
